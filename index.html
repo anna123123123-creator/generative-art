@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生成艺术图案生成器 · Flow Field Art</title>
+<meta name="description" content="免费开源、纯浏览器运行的生成艺术工具，基于流场算法绘制粒子轨迹图案，选配色和密度一键生成并导出PNG。不用装软件、不联网、不需要AI接口。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>生成艺术<span class="accent">图案</span>生成器</h1>
+    <p class="tagline">基于流场（flow field）算法的粒子轨迹生成艺术，选配色和密度，一键生成独一无二的抽象图案，导出 PNG。纯算法生成，不需要接任何 AI 接口。</p>
+  </header>
+
+  <main class="layout">
+    <section class="controls">
+      <div class="field">
+        <label>配色</label>
+        <select id="paletteSelect">
+          <option value="aurora">极光青紫</option>
+          <option value="sunset">日落暖橙</option>
+          <option value="mono">单色墨黑</option>
+          <option value="candy">糖果多彩</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>粒子密度</label>
+        <input id="densityInput" type="range" min="150" max="1200" step="50" value="500">
+      </div>
+      <div class="field">
+        <label>轨迹长度</label>
+        <input id="lengthInput" type="range" min="40" max="260" step="10" value="140">
+      </div>
+      <button id="btnGenerate" class="btn btn-primary">🎲 重新生成</button>
+      <button id="btnExport" class="btn btn-ghost">导出 PNG ↓</button>
+    </section>
+    <section class="canvas-wrap">
+      <canvas id="canvas" width="900" height="900"></canvas>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>MIT 协议开源，纯前端 Canvas 算法生成，不联网、不上传。</p>
+    <p>想要根据文字描述用 AI 生成图片、图生图、超清放大？<a href="https://inzyxuashop.com/aihuihua-yuanma.html" target="_blank" rel="noopener">看看完整版 AI 绘画源码 →</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
